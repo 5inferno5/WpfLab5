@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfLab5.DialogEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfLab5"            
+             Title="Edit" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0,4*"></ColumnDefinition>
+            <ColumnDefinition Width="0,6*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Толщина линии:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Цвет линии:" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Заливка:" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <TextBox x:Name="txtThickness" Grid.Row="0" Grid.Column="1" Text="3" Margin="20,20,20,20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <ComboBox x:Name="cmbLineColor" IsEditable="False" IsReadOnly="True" Grid.Row="1" Grid.Column="1"  Margin="20,20,20,20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <ComboBox x:Name="cmbFill" IsEditable="False" IsReadOnly="True" Grid.Row="2" Grid.Column="1" Margin="20,20,20,20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="OK" Command="local:MyCommands.OK_EditDialog"  Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,11,10,29"/>
+            <Button Content="Cancel" Command="local:MyCommands.Cancel_EditDialog" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,10,10,30"/>
+        </Grid>
+
+    </Grid>
+</Window>
